@@ -1,10 +1,11 @@
 #include "UzytkownikMenedzer.h"
 
+
 void UzytkownikMenedzer::rejestracjaUzytkownika() {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
     uzytkownicy.push_back(uzytkownik);
-    PlikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
+    plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
 
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");
@@ -13,13 +14,13 @@ void UzytkownikMenedzer::rejestracjaUzytkownika() {
 Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() {
     Uzytkownik uzytkownik;
 
-    uzytkownik.usatwId(pobierzIdNowegoUzytkownika());
+    uzytkownik.ustawId(pobierzIdNowegoUzytkownika());
 
     string login;
     do {
         cout << "Podaj login: ";
         cin >> login;
-        uzytkownik.usatwLogin(login);
+        uzytkownik.ustawLogin(login);
     } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     string haslo;
@@ -55,6 +56,11 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow() {
     }
 }
 
+void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
+
+{
+    plikZUzytkownikami.wczytajUzytkownikowZPliku();
+}
 
 
 
