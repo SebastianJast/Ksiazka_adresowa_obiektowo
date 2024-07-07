@@ -1,29 +1,30 @@
 #include "PlikZUzytkownikami.h"
 
-PlikZUzytkownikami::PlikZUzytkownikami()
+void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 {
-    nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
-}
-
-void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik) {
-
     string liniaZDanymiUzytkownika = "";
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
 
-    if (plikTekstowy.good() == true) {
+    if (plikTekstowy.good() == true)
+    {
         liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
 
-        if (czyPlikJestPusty() == true) {
+        if (czyPlikJestPusty() == true)
+        {
             plikTekstowy << liniaZDanymiUzytkownika;
-        } else {
+        }
+        else
+        {
             plikTekstowy << endl << liniaZDanymiUzytkownika ;
         }
-    } else
+        plikTekstowy.close();
+    }
+    else
         cout << "Nie udalo sie otworzyc pliku " << nazwaPlikuZUzytkownikami << " i zapisac w nim danych." << endl;
-    plikTekstowy.close();
 }
 
-bool PlikZUzytkownikami::czyPlikJestPusty() {
+bool PlikZUzytkownikami::czyPlikJestPusty()
+{
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
         return true;
@@ -31,7 +32,8 @@ bool PlikZUzytkownikami::czyPlikJestPusty() {
         return false;
 }
 
-string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik) {
+string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
+{
     string liniaZDanymiUzytkownika = "";
 
     liniaZDanymiUzytkownika += MetodyPomocnicze::konwerjsaIntNaString(uzytkownik.pobierzId())+ '|';
@@ -40,7 +42,6 @@ string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowym
 
     return liniaZDanymiUzytkownika;
 }
-
 
 vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
 {
@@ -57,8 +58,7 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
             uzytkownik = pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
             uzytkownicy.push_back(uzytkownik);
         }
-
-    plikTekstowy.close();
+        plikTekstowy.close();
     }
     return uzytkownicy;
 }
@@ -80,7 +80,7 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
             switch(numerPojedynczejDanejUzytkownika)
             {
             case 1:
-                uzytkownik.ustawId( atoi(pojedynczaDanaUzytkownika.c_str()));
+                uzytkownik.ustawId(atoi(pojedynczaDanaUzytkownika.c_str()));
                 break;
             case 2:
                 uzytkownik.ustawLogin(pojedynczaDanaUzytkownika);
