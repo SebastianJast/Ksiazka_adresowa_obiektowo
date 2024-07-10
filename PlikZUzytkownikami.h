@@ -7,6 +7,7 @@
 #include <cstdlib>
 
 #include "Uzytkownik.h"
+#include "Adresat.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;
@@ -24,6 +25,7 @@ public:
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
+    void dopiszAdresataDoPliku(Adresat adresat);
 
 };
 

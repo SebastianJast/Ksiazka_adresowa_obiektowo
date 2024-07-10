@@ -70,6 +70,7 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
 }
 
 int UzytkownikMenedzer::logowanieUzytkownika() {
+
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
@@ -100,11 +101,6 @@ int UzytkownikMenedzer::logowanieUzytkownika() {
     return 0;
 }
 
-int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
-{
-    return idZalogowanegoUzytkownika = logowanieUzytkownika();
-}
-
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
 {
     string noweHaslo = "";
@@ -122,3 +118,6 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
     }
    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
+
+
+
