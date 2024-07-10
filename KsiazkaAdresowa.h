@@ -16,7 +16,7 @@ class KsiazkaAdresowa
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), adresatMenedzer(nazwaPlikuZAdresatami) {
-        uzytkownikMenedzer.wczytajUzytkownikowZPliku(), adresatMenedzer.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
+        uzytkownikMenedzer.wczytajUzytkownikowZPliku();
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
@@ -24,6 +24,8 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     int znajdzOstatnieIdAdresata();
+    void wyswietlWszystkichAdresatow();
+    void wczytajAdresatowZPliku(int idZalogowanegoUzytkownika);
 };
 
 #endif

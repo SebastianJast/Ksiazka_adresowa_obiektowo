@@ -31,3 +31,14 @@ int KsiazkaAdresowa::znajdzOstatnieIdAdresata()
 {
     return adresatMenedzer.znajdzOstatnieIdAdresata();
 }
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
+{
+    adresatMenedzer.wyswietlWszystkichAdresatow();
+}
+
+void KsiazkaAdresowa::wczytajAdresatowZPliku(int idZalogowanegoUzytkownika)
+{
+    adresatMenedzer.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
+}
+
