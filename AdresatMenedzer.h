@@ -22,7 +22,7 @@ class AdresatMenedzer
     void wyswietlDaneAdresata(Adresat adresat);
 
 public:
-    AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+    AdresatMenedzer(string nazwaPlikuZAdresatami, string nazwaPlikuTymczasowego ,int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami, nazwaPlikuTymczasowego), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
     {
          adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
@@ -30,6 +30,10 @@ public:
     void wczytajAdresatowZPliku(int idZalogowanegoUzytkownika);
     int znajdzOstatnieIdAdresata();
     void wyswietlWszystkichAdresatow();
+    int usunAdresata();
+    int podajIdWybranegoAdresata();
+    int zwrocNumerLiniiSzukanegoAdresata(int idUsuwanegoAdresata);
+    void usunWybranaLinieWPliku(int numerUsuwanejLinii);
 
 };
 
