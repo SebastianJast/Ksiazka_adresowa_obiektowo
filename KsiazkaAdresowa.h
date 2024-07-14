@@ -29,7 +29,7 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
-    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+    void zmianaHaslaZalogowanegoUzytkownika();
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     int znajdzOstatnieIdAdresata();
     void wyswietlWszystkichAdresatow();
@@ -38,6 +38,7 @@ public:
     void edytujAdresata();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
+
 };
 
 #endif

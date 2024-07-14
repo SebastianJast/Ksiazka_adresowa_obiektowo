@@ -1,6 +1,1 @@
-1|1|1|1|1|1||
-2|1|Kamil|Jast|s|s|s|
-3|2|Elo|Elo|elo|elo||
-4|3|Elo|Elo|elo|eloe|elo|
-6|4|Sebastian|Jast|333|33|33|
-7|4|1|1|1|1|11|
+2|1|Sebastian|S||s|s|

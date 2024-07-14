@@ -20,9 +20,9 @@ int KsiazkaAdresowa::logowanieUzytkownika()
   }
 }
 
-void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
-    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
 int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
@@ -32,7 +32,7 @@ int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatnie
             adresatMenedzer -> dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
         }
         else {
-            cout << "Aby dodaæ adresata, nale¿y najpierw siê zalogowaæ" << endl;
+            cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
             system("pause");
         }
 }
@@ -73,4 +73,3 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
 {
     adresatMenedzer->wyszukajAdresatowPoNazwisku();
 }
-
