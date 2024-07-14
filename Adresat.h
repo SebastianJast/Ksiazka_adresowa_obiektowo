@@ -36,11 +36,11 @@ public:
 
     int&pobierzId();
     int& pobierzIdUzytkownika();
-    string pobierzImie();
-    string pobierzNazwisko();
-    string pobierzNumerTelefonu();
-    string pobierzEmail();
-    string pobierzAdres();
+    string& pobierzImie();
+    string& pobierzNazwisko();
+    string& pobierzNumerTelefonu();
+    string& pobierzEmail();
+    string& pobierzAdres();
 
 };
 

@@ -17,9 +17,12 @@ class AdresatMenedzer
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
+    void usunWybranaLinieWPliku(int numerUsuwanejLinii);
 
     Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata);
     void wyswietlDaneAdresata(Adresat adresat);
+    int zwrocNumerLiniiSzukanegoAdresata(int idUsuwanegoAdresata);
+    int podajIdWybranegoAdresata();
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami, string nazwaPlikuTymczasowego ,int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami, nazwaPlikuTymczasowego), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
@@ -31,10 +34,8 @@ public:
     int znajdzOstatnieIdAdresata();
     void wyswietlWszystkichAdresatow();
     int usunAdresata();
-    int podajIdWybranegoAdresata();
-    int zwrocNumerLiniiSzukanegoAdresata(int idUsuwanegoAdresata);
-    void usunWybranaLinieWPliku(int numerUsuwanejLinii);
-
+    void edytujAdresata();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
 };
 
 #endif

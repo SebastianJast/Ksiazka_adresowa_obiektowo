@@ -59,3 +59,8 @@ int KsiazkaAdresowa::usunAdresata()
     return adresatMenedzer-> usunAdresata();
 }
 
+void KsiazkaAdresowa::edytujAdresata()
+{
+    adresatMenedzer->edytujAdresata();
+}
+
