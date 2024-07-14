@@ -45,27 +45,27 @@ int& Adresat::pobierzIdUzytkownika()
     return idUzytkownika;
 }
 
-string Adresat::pobierzImie()
+string& Adresat::pobierzImie()
 {
     return imie;
 }
 
-string Adresat::pobierzNazwisko()
+string& Adresat::pobierzNazwisko()
 {
     return nazwisko;
 }
 
-string Adresat::pobierzNumerTelefonu()
+string& Adresat::pobierzNumerTelefonu()
 {
     return numerTelefonu;
 }
 
-string Adresat::pobierzEmail()
+string& Adresat::pobierzEmail()
 {
     return email;
 }
 
-string Adresat::pobierzAdres()
+string& Adresat::pobierzAdres()
 {
     return adres;
 }
