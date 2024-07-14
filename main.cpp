@@ -36,7 +36,6 @@ int main()
                 break;
             }
         } else{
-            ksiazkaAdresowa.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
             idOstatniegoAdresata = ksiazkaAdresowa.znajdzOstatnieIdAdresata();
             wybor = MetodyPomocnicze::wybierzOpcjeZMenuUzytkownika();
             switch (wybor)
@@ -63,6 +62,7 @@ int main()
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
                 break;
             case '8':
+                ksiazkaAdresowa.wylogowanieUzytkownika();
                 idZalogowanegoUzytkownika = 0;
                 break;
             }
