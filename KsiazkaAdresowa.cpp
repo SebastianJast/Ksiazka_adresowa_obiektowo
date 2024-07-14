@@ -16,7 +16,7 @@ int KsiazkaAdresowa::logowanieUzytkownika()
     uzytkownikMenedzer.logowanieUzytkownika();
     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
   {
-      adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+      adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, NAZWA_PLIKU_TYMCZASOWEGO, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
   }
 }
 
@@ -52,5 +52,10 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
     uzytkownikMenedzer.wylogowanieUzytkownika();
     delete adresatMenedzer;
     adresatMenedzer = NULL;
+}
+
+int KsiazkaAdresowa::usunAdresata()
+{
+    return adresatMenedzer-> usunAdresata();
 }
 

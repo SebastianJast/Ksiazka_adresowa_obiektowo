@@ -63,7 +63,7 @@ char MetodyPomocnicze::wybierzOpcjeZMenuUzytkownika()
 //    cout << "2. Wyszukaj po imieniu" << endl;
 //    cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
-//    cout << "5. Usun adresata" << endl;
+    cout << "5. Usun adresata" << endl;
 //    cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
     cout << "7. Zmien haslo" << endl;
@@ -105,4 +105,20 @@ string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku)
     return liczba;
 }
 
+int MetodyPomocnicze::wczytajLiczbeCalkowita()
+{
+    string wejscie = "";
+    int liczba = 0;
+
+    while (true)
+    {
+        getline(cin, wejscie);
+
+        stringstream myStream(wejscie);
+        if (myStream >> liczba)
+            break;
+        cout << "To nie jest liczba. Wpisz ponownie. " << endl;
+    }
+    return liczba;
+}
 

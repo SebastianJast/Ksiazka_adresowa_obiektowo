@@ -11,7 +11,7 @@ int main()
     int idOstatniegoAdresata = 0;
     char wybor;
 
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt", "Adresaci_tymczasowo");
 
    while (true)
     {
@@ -53,7 +53,7 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
-
+                ksiazkaAdresowa.usunAdresata();
                 break;
             case '6':
 
