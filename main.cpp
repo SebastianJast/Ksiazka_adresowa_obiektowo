@@ -5,22 +5,18 @@
 using namespace std;
 
 
-int main()
-{
+int main() {
     int idZalogowanegoUzytkownika = 0;
     int idOstatniegoAdresata = 0;
     char wybor;
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt", "Adresaci_tymczasowo");
 
-   while (true)
-    {
-        if (idZalogowanegoUzytkownika == 0)
-        {
+    while (true) {
+        if (idZalogowanegoUzytkownika == 0) {
             wybor = MetodyPomocnicze::wybierzOpcjeZMenuGlownego();
 
-            switch (wybor)
-            {
+            switch (wybor) {
             case '1':
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
@@ -35,13 +31,12 @@ int main()
                 system("pause");
                 break;
             }
-        } else{
+        } else {
             idOstatniegoAdresata = ksiazkaAdresowa.znajdzOstatnieIdAdresata();
             wybor = MetodyPomocnicze::wybierzOpcjeZMenuUzytkownika();
-            switch (wybor)
-            {
+            switch (wybor) {
             case '1':
-                idOstatniegoAdresata = ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                idOstatniegoAdresata = ksiazkaAdresowa.dodajAdresata(idOstatniegoAdresata);
                 break;
             case '2':
                 ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
@@ -67,6 +62,6 @@ int main()
                 break;
             }
         }
-}
-return 0;
+    }
+    return 0;
 }
