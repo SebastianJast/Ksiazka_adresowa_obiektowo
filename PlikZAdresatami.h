@@ -11,13 +11,13 @@
 #include "PlikTekstowy.h"
 
 
-
 using namespace std;
 
 class PlikZAdresatami : public PlikTekstowy
 {
     const string NAZWA_PLIKU_Z_ADRESATAMI;
     const string NAZWA_PLIKU_TYMCZASOWEGO;
+    int idEdytowanegoAdresata;
 
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
@@ -31,10 +31,9 @@ public:
     void dopiszAdresataDoPliku(Adresat adresat);
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int znajdzOstatnieIdAdresata();
-    int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
-    void usunWybranaLinieWPliku(int numerUsuwanejLinii);
-    void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
-    void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+    void usunWybranegoAdresataZPliku(int idUsuwanegoAdresata);
+    void edytujWybranegoAdresataZPliku(Adresat adresat, int idEdytowanegoAdresata);
 };
 
 #endif

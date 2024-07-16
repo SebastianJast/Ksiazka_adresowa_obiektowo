@@ -25,11 +25,11 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
-int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+int KsiazkaAdresowa::dodajAdresata(int idOstatniegoAdresata)
 {
     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
         {
-            adresatMenedzer -> dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+            adresatMenedzer -> dodajAdresata(idOstatniegoAdresata);
         }
         else {
             cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;

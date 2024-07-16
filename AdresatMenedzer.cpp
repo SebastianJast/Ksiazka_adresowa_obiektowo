@@ -32,7 +32,7 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idOstatniegoAdresata)
     return adresat;
 }
 
-int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+int AdresatMenedzer::dodajAdresata(int idOstatniegoAdresata)
 {
     Adresat adresat;
 
@@ -104,8 +104,7 @@ int AdresatMenedzer::usunAdresata()
             znak = MetodyPomocnicze::wczytajZnak();
             if (znak == 't')
             {
-                numerLiniiUsuwanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(idUsuwanegoAdresata);
-                usunWybranaLinieWPliku(numerLiniiUsuwanegoAdresata);
+                usunWybranegoAdresataZPliku(idUsuwanegoAdresata);
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
@@ -135,14 +134,10 @@ int AdresatMenedzer::podajIdWybranegoAdresata()
     return idWybranegoAdresata;
 }
 
-int AdresatMenedzer::zwrocNumerLiniiSzukanegoAdresata(int idUsuwanegoAdresata)
-{
-    return plikZAdresatami.zwrocNumerLiniiSzukanegoAdresata(idUsuwanegoAdresata);
-}
 
-void AdresatMenedzer::usunWybranaLinieWPliku(int numerUsuwanejLinii)
+int AdresatMenedzer::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata)
 {
-    plikZAdresatami.usunWybranaLinieWPliku(numerUsuwanejLinii);
+    plikZAdresatami.usunWybranegoAdresataZPliku(idUsuwanegoAdresata);
 }
 
 void AdresatMenedzer::edytujAdresata()
@@ -172,28 +167,28 @@ void AdresatMenedzer::edytujAdresata()
                 cout << "Podaj nowe imie: ";
                 adresaci[i].pobierzImie() = MetodyPomocnicze::wczytajLinie();
                 adresaci[i].pobierzImie()= MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresaci[i].pobierzImie());
-                zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '2':
                 cout << "Podaj nowe nazwisko: ";
                 adresaci[i].pobierzNazwisko() = MetodyPomocnicze::wczytajLinie();
                 adresaci[i].pobierzNazwisko() = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresaci[i].pobierzNazwisko());
-                zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '3':
                 cout << "Podaj nowy numer telefonu: ";
                 adresaci[i].pobierzNumerTelefonu() = MetodyPomocnicze::wczytajLinie();
-                zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '4':
                 cout << "Podaj nowy email: ";
                 adresaci[i].pobierzEmail() = MetodyPomocnicze::wczytajLinie();
-                zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '5':
                 cout << "Podaj nowy adres zamieszkania: ";
                 adresaci[i].pobierzAdres() = MetodyPomocnicze::wczytajLinie();
-                zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '6':
                 cout << endl << "Powrot do menu uzytkownika" << endl << endl;
@@ -211,9 +206,9 @@ void AdresatMenedzer::edytujAdresata()
     system("pause");
 }
 
-void AdresatMenedzer::zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata)
+void AdresatMenedzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
     {
-        plikZAdresatami.zaktualizujDaneWybranegoAdresata(adresat, idEdytowanegoAdresata);
+        plikZAdresatami.zaktualizujDaneWybranegoAdresata(adresat);
     }
 
 void AdresatMenedzer::wyszukajAdresatowPoImieniu()

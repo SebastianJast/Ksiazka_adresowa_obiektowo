@@ -17,13 +17,11 @@ class AdresatMenedzer
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
-    void usunWybranaLinieWPliku(int numerUsuwanejLinii);
+
 
     Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata);
     void wyswietlDaneAdresata(Adresat adresat);
-    int zwrocNumerLiniiSzukanegoAdresata(int idUsuwanegoAdresata);
     int podajIdWybranegoAdresata();
-    void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
 public:
@@ -31,15 +29,16 @@ public:
     {
          adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
-    int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
-    void wczytajAdresatowZPliku(int idZalogowanegoUzytkownika);
+    int dodajAdresata(int idOstatniegoAdresata);
+    void wczytajAdresatowZPliku();
     int znajdzOstatnieIdAdresata();
     void wyswietlWszystkichAdresatow();
     int usunAdresata();
     void edytujAdresata();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
-
+    int usunWybranegoAdresataZPliku(int idUsuwanegoAdresata);
 };
 
 #endif
